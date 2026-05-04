@@ -42,20 +42,19 @@ export default function Home() {
 
         {/* BUTTONS */}
         <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-
-          <button
-            onClick={() => navigate("/projects")}
+            <button
+            onClick={() => document.getElementById("projects").scrollIntoView({ behavior: "smooth" })}
             className="w-full sm:w-auto px-6 py-3 rounded-lg bg-cyan-500 hover:bg-cyan-400 transition text-black font-medium shadow-lg shadow-cyan-500/20"
-          >
+            >
             Ver Projetos ⚡
-          </button>
+            </button>
 
-          <button
-            onClick={() => navigate("/contact")}
+            <button
+            onClick={() => document.getElementById("contact").scrollIntoView({ behavior: "smooth" })}
             className="w-full sm:w-auto px-6 py-3 rounded-lg border border-cyan-400/40 text-cyan-300 hover:bg-cyan-400/10 transition"
-          >
+            >
             Contato
-          </button>
+            </button>
 
         </div>
       </div>
