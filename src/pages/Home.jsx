@@ -1,10 +1,13 @@
-import { useNavigate } from "react-router-dom"
-
 export default function Home() {
-  const navigate = useNavigate()
+  const scrollTo = (id) => {
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" })
+  }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-[#0b1e3c] overflow-hidden px-4">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center bg-[#0b1e3c] overflow-hidden px-4"
+    >
 
       {/* partículas */}
       <div className="absolute inset-0">
@@ -30,7 +33,7 @@ export default function Home() {
 
         {/* TITLE */}
         <h1 className="font-bold tracking-wide bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent
-          text-4xl sm:text-5xl md:text-6xl lg:text-8xl">
+          text-4xl sm:text-5xl md:text-6xl lg:text-8xl leading-[1.1]">
           THIFFANY
         </h1>
 
@@ -42,22 +45,32 @@ export default function Home() {
 
         {/* BUTTONS */}
         <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-            <button
-            onClick={() => document.getElementById("projects").scrollIntoView({ behavior: "smooth" })}
-            className="w-full sm:w-auto px-6 py-3 rounded-lg bg-cyan-500 hover:bg-cyan-400 transition text-black font-medium shadow-lg shadow-cyan-500/20"
-            >
-            Ver Projetos ⚡
-            </button>
 
-            <button
-            onClick={() => document.getElementById("contact").scrollIntoView({ behavior: "smooth" })}
+          <button
+            onClick={() => scrollTo("projects")}
+            className="w-full sm:w-auto px-6 py-3 sm:py-3.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 transition text-black font-medium shadow-lg shadow-cyan-500/20"
+          >
+            Ver Projetos ⚡
+          </button>
+
+          <button
+            onClick={() => scrollTo("contact")}
             className="w-full sm:w-auto px-6 py-3 rounded-lg border border-cyan-400/40 text-cyan-300 hover:bg-cyan-400/10 transition"
-            >
+          >
             Contato
-            </button>
+          </button>
 
         </div>
       </div>
+
+      {/* SETA ↓ */}
+      <button   
+        onClick={() => scrollTo("about")}
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-cyan-400 animate-bounce hover:scale-110 transition"
+        >
+        <span className="text-3xl sm:text-4xl md:text-5xl">↓</span>
+        </button>
+
     </section>
   )
 }
