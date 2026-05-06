@@ -76,12 +76,11 @@ export default function About() {
 
       {/* SETA ↓ */}
         <button
-        onClick={() => scrollTo("projects")}
+        onClick={() => scrollTo("arsenal")}
         className="absolute bottom-6 left-1/2 -translate-x-1/2 text-cyan-400 animate-bounce hover:scale-110 transition"
         >
         <span className="text-3xl sm:text-4xl md:text-5xl">↓</span>
         </button>
-
     </section>
   )
 }
